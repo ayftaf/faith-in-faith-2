@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://cfik1xsiwqrly"]
+
+[ext_resource type="Script" uid="uid://btm62qtxhx7hk" path="res://scripts/combat/CardUI.gd" id="1_bausy"]
+
+[node name="CardUI" type="PanelContainer" unique_id=405256642]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_bausy")
+
+[node name="CardVBox" type="VBoxContainer" parent="." unique_id=967722645]
+layout_mode = 2
+
+[node name="CardArtwork" type="TextureRect" parent="CardVBox" unique_id=1754035253]
+custom_minimum_size = Vector2(160, 200)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CardNameLabel" type="Label" parent="CardVBox" unique_id=678666929]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="CardDescLabel" type="Label" parent="CardVBox" unique_id=1216825403]
+custom_minimum_size = Vector2(1, 0)
+layout_mode = 2
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="TokenLabel" type="Label" parent="CardVBox" unique_id=1780935012]
+custom_minimum_size = Vector2(1, 0)
+layout_mode = 2
+horizontal_alignment = 1
+autowrap_mode = 2

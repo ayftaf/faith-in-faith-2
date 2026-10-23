@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b3j132dtohfjc"]
+
+[ext_resource type="Script" path="res://scenes/overworld/NPC.gd" id="1_npc"]
+
+[node name="Npc" type="Node2D" unique_id=1314061910]
+script = ExtResource("1_npc")

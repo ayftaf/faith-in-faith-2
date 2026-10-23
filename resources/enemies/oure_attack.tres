@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="EnemyIntentData" format=3 uid="uid://3q6otq8bmwm8"]
+
+[ext_resource type="Script" uid="uid://bi2iaalbfdypc" path="res://resources/EnemyIntentData.gd" id="1_vsqdt"]
+
+[resource]
+script = ExtResource("1_vsqdt")
+value = 5
+description = "oure attaque"
+metadata/_custom_type_script = "uid://bi2iaalbfdypc"

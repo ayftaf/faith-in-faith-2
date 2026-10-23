@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://1hpaq08uswwf"]
+
+[ext_resource type="Script" uid="uid://ducl88hhd3s0u" path="res://scenes/combat/Combat.gd" id="1_gxktx"]
+[ext_resource type="Script" uid="uid://bsxasmm7dfw8m" path="res://scenes/combat/CombatManager.gd" id="2_g5y84"]
+
+[node name="Combat" type="Node2D" unique_id=741488762]
+script = ExtResource("1_gxktx")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=9534393]
+
+[node name="Root" type="Control" parent="UI" unique_id=1776160186]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LeftPanel" type="PanelContainer" parent="UI/Root" unique_id=1424170836]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.278
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LeftVBox" type="VBoxContainer" parent="UI/Root/LeftPanel" unique_id=228345825]
+layout_mode = 2
+
+[node name="SwordPanel" type="PanelContainer" parent="UI/Root/LeftPanel/LeftVBox" unique_id=392504623]
+layout_mode = 2
+
+[node name="SwordVBox" type="VBoxContainer" parent="UI/Root/LeftPanel/LeftVBox/SwordPanel" unique_id=1562463015]
+layout_mode = 2
+
+[node name="SwordNameLabel" type="Label" parent="UI/Root/LeftPanel/LeftVBox/SwordPanel/SwordVBox" unique_id=447750589]
+layout_mode = 2
+
+[node name="SwordDescLabel" type="Label" parent="UI/Root/LeftPanel/LeftVBox/SwordPanel/SwordVBox" unique_id=1259747060]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="UI/Root/LeftPanel/LeftVBox/SwordPanel/SwordVBox" unique_id=467873954]
+layout_mode = 2
+
+[node name="CardDetailNameLabel" type="Label" parent="UI/Root/LeftPanel/LeftVBox/SwordPanel/SwordVBox" unique_id=1055009272]
+layout_mode = 2
+
+[node name="CardDetailDescLabel" type="Label" parent="UI/Root/LeftPanel/LeftVBox/SwordPanel/SwordVBox" unique_id=1180788523]
+layout_mode = 2
+
+[node name="SpellsHBox" type="HBoxContainer" parent="UI/Root/LeftPanel/LeftVBox" unique_id=304095824]
+layout_mode = 2
+
+[node name="SpellOneButton" type="Button" parent="UI/Root/LeftPanel/LeftVBox/SpellsHBox" unique_id=1298943839]
+layout_mode = 2
+
+[node name="SpellTwoButton" type="Button" parent="UI/Root/LeftPanel/LeftVBox/SpellsHBox" unique_id=1709509757]
+layout_mode = 2
+
+[node name="PlayerStatsPanel" type="PanelContainer" parent="UI/Root/LeftPanel/LeftVBox" unique_id=308553864]
+layout_mode = 2
+
+[node name="PlayerVBox" type="VBoxContainer" parent="UI/Root/LeftPanel/LeftVBox/PlayerStatsPanel" unique_id=1000322856]
+layout_mode = 2
+
+[node name="PlayerHpLabel" type="Label" parent="UI/Root/LeftPanel/LeftVBox/PlayerStatsPanel/PlayerVBox" unique_id=367876817]
+layout_mode = 2
+
+[node name="PlayerShieldLabel" type="Label" parent="UI/Root/LeftPanel/LeftVBox/PlayerStatsPanel/PlayerVBox" unique_id=750686765]
+layout_mode = 2
+
+[node name="PlayerStatusLabel" type="Label" parent="UI/Root/LeftPanel/LeftVBox/PlayerStatsPanel/PlayerVBox" unique_id=59852020]
+layout_mode = 2
+
+[node name="RightPanel" type="Control" parent="UI/Root" unique_id=1843165240]
+layout_mode = 1
+anchor_left = 0.299
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="EnemyArea" type="HBoxContainer" parent="UI/Root/RightPanel" unique_id=19135254]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="HandArea" type="HBoxContainer" parent="UI/Root/RightPanel" unique_id=779722877]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="CombatManager" type="Node" parent="." unique_id=1036778122]
+script = ExtResource("2_g5y84")

@@ -1,0 +1,80 @@
+[gd_scene format=4 uid="uid://l0tekt1bl4ke"]
+
+[ext_resource type="Script" uid="uid://clw8ab4omqwjr" path="res://scenes/overworld/Overworld.gd" id="1_overworld"]
+[ext_resource type="PackedScene" uid="uid://dy6qa0b4utk5u" path="res://scenes/overworld/Player.tscn" id="2_player"]
+[ext_resource type="PackedScene" uid="uid://b3j132dtohfjc" path="res://scenes/overworld/NPC.tscn" id="3_npc"]
+[ext_resource type="TileSet" uid="uid://dam6xcud3q8ls" path="res://scenes/overworld/OverworldTiles.tres" id="4_tileset"]
+
+[node name="Overworld" type="Node2D" unique_id=1555925916]
+script = ExtResource("1_overworld")
+
+[node name="Map" type="TileMapLayer" parent="." unique_id=1323134915]
+position = Vector2(66, 36)
+tile_map_data = PackedByteArray("AAAAAAAAAAADAAAAAAABAAAAAAADAAAAAAACAAAAAAADAAAAAAADAAAAAAADAAAAAAAEAAAAAAADAAAAAAAFAAAAAAADAAAAAAAGAAAAAAADAAAAAAAHAAAAAAADAAAAAAAIAAAAAAADAAAAAAAJAAAAAAADAAAAAAAKAAAAAAADAAAAAAALAAAAAAADAAAAAAAMAAAAAAADAAAAAAANAAAAAAADAAAAAAAOAAAAAAADAAAAAAAPAAAAAAADAAAAAAAAAAEAAAADAAAAAAABAAEAAAAAAAAAAAACAAEAAAAAAAAAAAADAAEAAAABAAAAAAAEAAEAAAAAAAAAAAAFAAEAAAAAAAAAAAAGAAEAAAAAAAAAAAAHAAEAAAAAAAAAAAAIAAEAAAAAAAAAAAAJAAEAAAAAAAAAAAAKAAEAAAAAAAAAAAALAAEAAAAAAAAAAAAMAAEAAAABAAAAAAANAAEAAAAAAAAAAAAOAAEAAAAAAAAAAAAPAAEAAAADAAAAAAAAAAIAAAADAAAAAAABAAIAAAAAAAAAAAACAAIAAAAAAAAAAAADAAIAAAABAAAAAAAEAAIAAAAAAAAAAAAFAAIAAAAAAAAAAAAGAAIAAAAAAAAAAAAHAAIAAAADAAAAAAAIAAIAAAAAAAAAAAAJAAIAAAAAAAAAAAAKAAIAAAACAAAAAAALAAIAAAACAAAAAAAMAAIAAAABAAAAAAANAAIAAAAAAAAAAAAOAAIAAAAAAAAAAAAPAAIAAAADAAAAAAAAAAMAAAADAAAAAAABAAMAAAAAAAAAAAACAAMAAAAAAAAAAAADAAMAAAAAAAAAAAAEAAMAAAAAAAAAAAAFAAMAAAAAAAAAAAAGAAMAAAAAAAAAAAAHAAMAAAADAAAAAAAIAAMAAAAAAAAAAAAJAAMAAAAAAAAAAAAKAAMAAAAAAAAAAAALAAMAAAAAAAAAAAAMAAMAAAABAAAAAAANAAMAAAAAAAAAAAAOAAMAAAAAAAAAAAAPAAMAAAADAAAAAAAAAAQAAAADAAAAAAABAAQAAAABAAAAAAACAAQAAAABAAAAAAADAAQAAAABAAAAAAAEAAQAAAABAAAAAAAFAAQAAAAAAAAAAAAGAAQAAAABAAAAAAAHAAQAAAABAAAAAAAIAAQAAAABAAAAAAAJAAQAAAABAAAAAAAKAAQAAAABAAAAAAALAAQAAAABAAAAAAAMAAQAAAABAAAAAAANAAQAAAABAAAAAAAOAAQAAAABAAAAAAAPAAQAAAADAAAAAAAAAAUAAAADAAAAAAABAAUAAAAAAAAAAAACAAUAAAAAAAAAAAADAAUAAAABAAAAAAAEAAUAAAAAAAAAAAAFAAUAAAAAAAAAAAAGAAUAAAAAAAAAAAAHAAUAAAADAAAAAAAIAAUAAAAAAAAAAAAJAAUAAAAAAAAAAAAKAAUAAAAAAAAAAAALAAUAAAAAAAAAAAAMAAUAAAABAAAAAAANAAUAAAAAAAAAAAAOAAUAAAAAAAAAAAAPAAUAAAADAAAAAAAAAAYAAAADAAAAAAABAAYAAAAAAAAAAAACAAYAAAAAAAAAAAADAAYAAAABAAAAAAAEAAYAAAADAAAAAAAFAAYAAAAAAAAAAAAGAAYAAAAAAAAAAAAHAAYAAAADAAAAAAAIAAYAAAAAAAAAAAAJAAYAAAAAAAAAAAAKAAYAAAAAAAAAAAALAAYAAAAAAAAAAAAMAAYAAAABAAAAAAANAAYAAAAAAAAAAAAOAAYAAAAAAAAAAAAPAAYAAAADAAAAAAAAAAcAAAADAAAAAAABAAcAAAAAAAAAAAACAAcAAAAAAAAAAAADAAcAAAABAAAAAAAEAAcAAAAAAAAAAAAFAAcAAAAAAAAAAAAGAAcAAAAAAAAAAAAHAAcAAAAAAAAAAAAIAAcAAAAAAAAAAAAJAAcAAAAAAAAAAAAKAAcAAAAAAAAAAAALAAcAAAAAAAAAAAAMAAcAAAABAAAAAAANAAcAAAAAAAAAAAAOAAcAAAAAAAAAAAAPAAcAAAADAAAAAAAAAAgAAAADAAAAAAABAAgAAAADAAAAAAACAAgAAAADAAAAAAADAAgAAAADAAAAAAAEAAgAAAADAAAAAAAFAAgAAAADAAAAAAAGAAgAAAADAAAAAAAHAAgAAAADAAAAAAAIAAgAAAADAAAAAAAJAAgAAAADAAAAAAAKAAgAAAADAAAAAAALAAgAAAADAAAAAAAMAAgAAAADAAAAAAANAAgAAAADAAAAAAAOAAgAAAADAAAAAAAPAAgAAAADAAAAAAA=")
+tile_set = ExtResource("4_tileset")
+
+[node name="Player" parent="Map" unique_id=1325850194 instance=ExtResource("2_player")]
+position = Vector2(160, 160)
+
+[node name="Mira" parent="Map" unique_id=767245677 instance=ExtResource("3_npc")]
+position = Vector2(352, 160)
+character_name = "Mira"
+dialogue_lines = Array[String](["Bonjour, voyageur. Les chemins sont plus sûrs en restant sur les dalles.", "Tu peux cliquer sur une case pour t'y rendre, ou utiliser ZQSD/WASD."])
+
+[node name="Oren" parent="Map" unique_id=193061176 instance=ExtResource("3_npc")]
+position = Vector2(672, 352)
+character_name = "Oren"
+dialogue_lines = Array[String](["Je garde le passage vers l'est.", "Approche-toi si tu veux parler aux gens du village."])
+
+[node name="DialogueLayer" type="CanvasLayer" parent="." unique_id=314785900]
+
+[node name="Overlay" type="ColorRect" parent="DialogueLayer" unique_id=463827461]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.02, 0.03, 0.02, 0.65)
+
+[node name="CenterContainer" type="CenterContainer" parent="DialogueLayer/Overlay" unique_id=335576068]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DialoguePanel" type="PanelContainer" parent="DialogueLayer/Overlay/CenterContainer" unique_id=1945282432]
+custom_minimum_size = Vector2(460, 190)
+layout_mode = 2
+
+[node name="Content" type="VBoxContainer" parent="DialogueLayer/Overlay/CenterContainer/DialoguePanel" unique_id=1444984373]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="NpcName" type="Label" parent="DialogueLayer/Overlay/CenterContainer/DialoguePanel/Content" unique_id=1201129170]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+
+[node name="DialogueText" type="Label" parent="DialogueLayer/Overlay/CenterContainer/DialoguePanel/Content" unique_id=56297257]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(420, 70)
+layout_mode = 2
+autowrap_mode = 3
+
+[node name="Buttons" type="HBoxContainer" parent="DialogueLayer/Overlay/CenterContainer/DialoguePanel/Content" unique_id=743561374]
+layout_mode = 2
+alignment = 2
+
+[node name="ContinueButton" type="Button" parent="DialogueLayer/Overlay/CenterContainer/DialoguePanel/Content/Buttons" unique_id=1023734141]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Continuer"
+
+[node name="CloseButton" type="Button" parent="DialogueLayer/Overlay/CenterContainer/DialoguePanel/Content/Buttons" unique_id=1992886012]
+layout_mode = 2
+text = "Fermer"
+
+[connection signal="pressed" from="DialogueLayer/Overlay/CenterContainer/DialoguePanel/Content/Buttons/CloseButton" to="." method="_close_dialogue"]

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://bm0nfhxmy1wo0"]
+
+[ext_resource type="Script" uid="uid://b7k112l2g3enj" path="res://resources/CardData.gd" id="1_810hx"]
+[ext_resource type="Texture2D" uid="uid://3cxs8km11k3j" path="res://art/cardplaceholder.png" id="1_e2c21"]
+
+[resource]
+script = ExtResource("1_810hx")
+cardName = "Block"
+description = "Gain 5 shield"
+artwork = ExtResource("1_e2c21")
+effectType = "shield"
+effectValue = 5
+metadata/_custom_type_script = "uid://b7k112l2g3enj"

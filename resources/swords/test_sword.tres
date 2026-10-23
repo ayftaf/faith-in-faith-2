@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SwordData" format=3 uid="uid://bu081wfuj3vjf"]
+
+[ext_resource type="Script" uid="uid://cpvvknu3t4o31" path="res://resources/SwordData.gd" id="1_o61pa"]
+
+[resource]
+script = ExtResource("1_o61pa")
+swordName = "Test Sword"
+description = "it does its best"
+spellOneName = "draw 2"
+spellOneDescription = "draw 2 cards."
+spellOneEffectType = "draw"
+spellOneEffectValue = 2
+spellTwoName = "discard left"
+spellTwoDescription = "discard the leftmost card"
+spellTwoEffectType = "discard_left"
+metadata/_custom_type_script = "uid://cpvvknu3t4o31"
